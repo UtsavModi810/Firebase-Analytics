@@ -15,37 +15,30 @@ function Separator() {
   return <View style={styles.separator} />;
 }
 
-const User = {
-  uid: '10020id',
-  balance: 2000,
-};
-
 export default class Analytics extends Component {
-  async componentDidMount() {
-    await firebase.app();
-    analytics().setCurrentScreen('Analytics');
-    // analytics().onSignIn();
-    // analytics().addCustomEvent();
-    // analytics().onSignOut();
+  componentDidMount() {
+    // analytics().setAnalyticsCollectionEnabled(true);
+    analytics().logScreenView({
+      screen_name: "Utsav analytics screen",
+      screen_class: "Analytics",
+    });
   }
 
-  async addCustomEvent() {
-    await analytics().logEvent('custom_event', {
+  addCustomEvent() {
+    analytics().logEvent('custom_event', {
       id: '123123',
       value: 'buy',
       variable: '123',
     });
   }
 
-  async onSignIn() {
-    await Promise.all([
-      analytics().setUserId(User.uid),
-      analytics().setUserProperty('account_balance', User.balance),
-    ]);
+  onSignIn() {
+    analytics().setUserId("2345"),
+    analytics().setUserProperty('account_balance', "1234567890")
   }
 
-  async onSignOut() {
-    await analytics().resetAnalyticsData();
+  onSignOut() {
+    analytics().resetAnalyticsData();
   }
 
   render() {
