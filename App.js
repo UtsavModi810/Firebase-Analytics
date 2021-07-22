@@ -1,26 +1,25 @@
-import React, { Component } from 'react'
-import { Text, View,Button } from 'react-native'
+import React, {Component} from 'react';
+import {Text, View, Button} from 'react-native';
 import analytics from '@react-native-firebase/analytics';
 import Analytics from './src/Analytics';
 analytics().setAnalyticsCollectionEnabled(true);
 
 class App extends Component {
-
-//   async onProductView(){
-//     await analytics().logEvent('product_view', {
-//       id: '123456789',
-//       color: 'red', 
-//       via: 'ProductCatalog',
-// });
-//   } 
-componentDidMount(){
-  analytics().setAnalyticsCollectionEnabled(true);
-}
+  //   async onProductView(){
+  //     await analytics().logEvent('product_view', {
+  //       id: '123456789',
+  //       color: 'red',
+  //       via: 'ProductCatalog',
+  // });
+  //   }
+  componentDidMount() {
+    analytics().setAnalyticsCollectionEnabled(true);
+  }
   render() {
     return (
-      <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-      <Analytics/>
-      {/* <Button
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Analytics />
+        {/* <Button
         title="Add To Basket"
         onPress={async () =>
           await analytics().logEvent('basket', {
@@ -31,7 +30,7 @@ componentDidMount(){
           })
         }
       /> */}
-      {/* <Button title="On Press" 
+        {/* <Button title="On Press" 
       onPress={()=>this.onProductView()
         // async ()=> 
         // await analytics().logSelectContent({
@@ -41,9 +40,9 @@ componentDidMount(){
         // })
       }
       /> */}
-    </View>
-    )
+      </View>
+    );
   }
 }
 
-export default App
+export default App;

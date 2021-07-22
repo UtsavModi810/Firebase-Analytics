@@ -24,9 +24,9 @@ export default class Analytics extends Component {
   async componentDidMount() {
     await firebase.app();
     analytics().setCurrentScreen('Analytics');
-    analytics().onSignIn();
-    analytics().addCustomEvent();
-    analytics().onSignOut();
+    // analytics().onSignIn();
+    // analytics().addCustomEvent();
+    // analytics().onSignOut();
   }
 
   async addCustomEvent() {
