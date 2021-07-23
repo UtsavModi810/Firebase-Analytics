@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View} from 'react-native';
 import analytics from '@react-native-firebase/analytics';
 import Analytics from './src/screen/Analytics';
+import Crashlytics from './src/screen/Crashlytics';
 import {analyticsCollection} from './src/component/AnalyticsEvent';
 
 class App extends Component {
@@ -18,3 +19,4 @@ class App extends Component {
 }
 
 export default App;
+

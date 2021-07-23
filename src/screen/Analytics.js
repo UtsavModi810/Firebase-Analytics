@@ -13,6 +13,7 @@ import {
 import {
   crashUser,
   setCrashlyticsCollection,
+  setCrashlyticsLog,
 } from '../component/CrashlyticsEvent';
 
 function Separator() {
@@ -23,7 +24,6 @@ export default class Analytics extends Component {
   componentDidMount() {
     setCrashlyticsCollection();
     logScreen();
-    
   }
 
   render() {
@@ -67,7 +67,7 @@ export default class Analytics extends Component {
           <View>
             <Text style={styles.title}>Crashlytics Event Start Here</Text>
           </View>
-       
+
           <View>
             <Text style={styles.title}>
               In Case to using the firebase crashlytics
@@ -85,6 +85,13 @@ export default class Analytics extends Component {
             />
             <Separator />
             <Button title="Test Crash" onPress={() => crashlytics().crash()} />
+          </View>
+          <Separator />
+          <View>
+            <Button
+              title="Crashlytics Log"
+              onPress={() => setCrashlyticsLog()}
+            />
           </View>
         </ScrollView>
       </SafeAreaView>
