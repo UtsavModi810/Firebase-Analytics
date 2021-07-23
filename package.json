@@ -13,6 +13,7 @@
     "@react-native-community/cli-platform-android": "^5.0.1",
     "@react-native-firebase/analytics": "^12.2.0",
     "@react-native-firebase/app": "^12.2.0",
+    "@react-native-firebase/crashlytics": "^12.3.0",
     "react": "17.0.1",
     "react-native": "^0.64.2"
   },

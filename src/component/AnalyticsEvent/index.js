@@ -1,6 +1,7 @@
 import analytics from '@react-native-firebase/analytics';
 import firebase from '@react-native-firebase/app';
 
+
 export const addCustomEvent = () => {
   analytics().logEvent('custom_event', {
     id: '123123',
@@ -28,3 +29,5 @@ export const logScreen = () => {
     screen_class: 'Analytics',
   });
 };
+
+
