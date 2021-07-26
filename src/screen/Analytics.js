@@ -3,6 +3,8 @@ import firebase from '@react-native-firebase/app';
 import analytics from '@react-native-firebase/analytics';
 import {Button, View, SafeAreaView, Text, ScrollView} from 'react-native';
 import crashlytics from '@react-native-firebase/crashlytics';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
+import PushNotification from 'react-native-push-notification';
 import styles from './style';
 import {
   addCustomEvent,
@@ -15,6 +17,8 @@ import {
   setCrashlyticsCollection,
   setCrashlyticsLog,
 } from '../component/CrashlyticsEvent';
+import {newPushNotificationEvent} from '../component/NotificationEvent';
+
 
 function Separator() {
   return <View style={styles.separator} />;
@@ -24,6 +28,7 @@ export default class Analytics extends Component {
   componentDidMount() {
     setCrashlyticsCollection();
     logScreen();
+    newPushNotificationEvent();
   }
 
   render() {
@@ -93,6 +98,13 @@ export default class Analytics extends Component {
               onPress={() => setCrashlyticsLog()}
             />
           </View>
+
+          <Separator />
+          <View>
+            <Text style={styles.title}>Notification Event Start Here</Text>
+            {/* <Button title="Test Crash" onPress={() => PushNotificationEvent()} /> */}
+          </View>
+
         </ScrollView>
       </SafeAreaView>
     );
