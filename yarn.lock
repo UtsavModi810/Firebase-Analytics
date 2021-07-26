@@ -1088,6 +1088,13 @@
   "resolved" "https://registry.npmjs.org/@react-native-community/eslint-plugin/-/eslint-plugin-1.1.0.tgz"
   "version" "1.1.0"
 
+"@react-native-community/push-notification-ios@^1.8.0":
+  "integrity" "sha512-vxvkeampafjmtDoQBN8Q4azP21l6cMX93+OQZemyIWZmG++OjCVDQVitobf/kWLm5zyGwdylejbpMGo75qo7rA=="
+  "resolved" "https://registry.npmjs.org/@react-native-community/push-notification-ios/-/push-notification-ios-1.8.0.tgz"
+  "version" "1.8.0"
+  dependencies:
+    "invariant" "^2.2.4"
+
 "@react-native-firebase/analytics@^12.2.0":
   "integrity" "sha512-vgl5/t6DNWTigtuq1fnF6uHnVARjVWHhjd1Hr89aH9yuh0S/6ig/IevVbBXcvBWExsfH0dT7/y2Yvpa+sE6OrA=="
   "resolved" "https://registry.npmjs.org/@react-native-firebase/analytics/-/analytics-12.2.0.tgz"
@@ -1107,6 +1114,11 @@
   "version" "12.3.0"
   dependencies:
     "stacktrace-js" "^2.0.0"
+
+"@react-native-firebase/messaging@^12.3.0":
+  "integrity" "sha512-ok5r7RWgRJx0MVH/Te2Ymq+wrswXsSTcQKUd8a5/q6eOBljoO2/KNYT3822IBPdlqzKoX65Et1mCg0x8bjlrwg=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/messaging/-/messaging-12.3.0.tgz"
+  "version" "12.3.0"
 
 "@react-native/assets@1.0.0":
   "integrity" "sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ=="
@@ -5227,7 +5239,12 @@
     "jscodeshift" "^0.11.0"
     "nullthrows" "^1.1.1"
 
-"react-native@*", "react-native@^0.64.2", "react-native@>=0.64.0-rc.0 || 0.0.0-*":
+"react-native-push-notification@^7.4.0":
+  "integrity" "sha512-Ac3Ep71e2D8Q/Vy0OHBAO5JwhsFsNSuf9knkpXQWS0B9488nIZJLEMuTpF8610xPvGw7XxVrL/q0oZO5F1pOzw=="
+  "resolved" "https://registry.npmjs.org/react-native-push-notification/-/react-native-push-notification-7.4.0.tgz"
+  "version" "7.4.0"
+
+"react-native@*", "react-native@^0.64.2", "react-native@>=0.33", "react-native@>=0.58.4", "react-native@>=0.64.0-rc.0 || 0.0.0-*":
   "integrity" "sha512-Ty/fFHld9DcYsFZujXYdeVjEhvSeQcwuTGXezyoOkxfiGEGrpL/uwUZvMzwShnU4zbbTKDu2PAm/uwuOittRGA=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.64.2.tgz"
   "version" "0.64.2"
@@ -5288,7 +5305,7 @@
     "react-shallow-renderer" "^16.13.1"
     "scheduler" "^0.20.1"
 
-"react@*", "react@^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@17.0.1":
+"react@*", "react@^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@>=16.6.3", "react@17.0.1":
   "integrity" "sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.1.tgz"
   "version" "17.0.1"
