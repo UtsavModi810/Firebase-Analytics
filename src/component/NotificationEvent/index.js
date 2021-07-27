@@ -10,6 +10,12 @@ export const newPushNotificationEvent = ()=>{
     onNotification: function (notification) {
       console.log("NOTIFICATION:", notification);
       notification.finish(PushNotificationIOS.FetchResult.NoData);
+      if (notification.foreground) {
+        PushNotification.localNotification({
+          title:notification.title,
+          message:notification.message
+        });
+        } 
     },
 
     onAction: function (notification) {
@@ -21,13 +27,22 @@ export const newPushNotificationEvent = ()=>{
       console.error(err.message, err);
     },
 
+    senderID: "27580035138",
+
     permissions: {
       alert: true,
       badge: true,
       sound: true,
     },
+    popInitialNotification: true,
+    
+    userInteraction: false,
+
     requestPermissions: true,
   });
+  return(
+    null
+  )
 
 }
 

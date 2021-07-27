@@ -102,7 +102,7 @@ export default class Analytics extends Component {
           <Separator />
           <View>
             <Text style={styles.title}>Notification Event Start Here</Text>
-            {/* <Button title="Test Crash" onPress={() => PushNotificationEvent()} /> */}
+            <Button title="Notification" onPress={() => alert('Hello')} />
           </View>
 
         </ScrollView>
