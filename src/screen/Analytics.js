@@ -54,9 +54,7 @@ export default class Analytics extends Component {
           <View>
             <Text style={styles.title}>
               User data can be attached to analytical events via the setUserId,
-              setUserProperties and setUserProperty methods. Each Firebase
-              project can have up to 25 uniquely named (case-sensitive) user
-              properties.
+              setUserProperties and setUserProperty methods.
             </Text>
             <Button
               title="Set User"
@@ -67,8 +65,7 @@ export default class Analytics extends Component {
           <Separator />
           <View>
             <Text style={styles.title}>
-              In some cases, resetting all analytics data is required on certain
-              events such as signing out of the application. To achieve this
+              In some cases, resetting all analytics data is required to
               call the resetAnalyticsData method.
             </Text>
             <Button title="Reset Analyticss Data" onPress={() => onSignOut()} />
@@ -79,9 +76,6 @@ export default class Analytics extends Component {
           </View>
 
           <View>
-            <Text style={styles.title}>
-              In Case to using the firebase crashlytics
-            </Text>
             <Button
               title="Crashlytics"
               onPress={() =>
@@ -106,8 +100,8 @@ export default class Analytics extends Component {
 
           <Separator />
           <View>
-            <Text style={styles.title}>Notification Event Start Here</Text>
-            <Button title="Notification" onPress={() => handleButtonPress()} />
+            <Text style={styles.title}>Local Notification Event Start Here</Text>
+            <Button title="Local Notification" onPress={() => handleButtonPress()} />
           </View>
 
         </ScrollView>
