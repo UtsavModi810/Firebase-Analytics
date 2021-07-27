@@ -18,10 +18,15 @@ import {
   setCrashlyticsLog,
 } from '../component/CrashlyticsEvent';
 import {newPushNotificationEvent} from '../component/NotificationEvent';
+import {LocalNotification} from '../component/LocalNotificationEvent';
 
 
 function Separator() {
   return <View style={styles.separator} />;
+}
+
+const handleButtonPress = () => {
+  LocalNotification()
 }
 
 export default class Analytics extends Component {
@@ -102,7 +107,7 @@ export default class Analytics extends Component {
           <Separator />
           <View>
             <Text style={styles.title}>Notification Event Start Here</Text>
-            <Button title="Notification" onPress={() => alert('Hello')} />
+            <Button title="Notification" onPress={() => handleButtonPress()} />
           </View>
 
         </ScrollView>

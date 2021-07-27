@@ -12,6 +12,7 @@ export const newPushNotificationEvent = ()=>{
       notification.finish(PushNotificationIOS.FetchResult.NoData);
       if (notification.foreground) {
         PushNotification.localNotification({
+          channelId:notification.channelId,
           title:notification.title,
           message:notification.message
         });
