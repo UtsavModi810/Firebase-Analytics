@@ -19,17 +19,18 @@ import {
 } from '../component/CrashlyticsEvent';
 import {newPushNotificationEvent} from '../component/NotificationEvent';
 import {LocalNotification} from '../component/LocalNotificationEvent';
+import LocalNotificationScreen from './LocalNotificationScreen';
 
 
 function Separator() {
   return <View style={styles.separator} />;
 }
 
-const handleButtonPress = () => {
-  LocalNotification()
-}
+// const handleButtonPress = () => {
+//   LocalNotification()
+// }
 
-export default class Analytics extends Component {
+export class Analytics extends Component {
   componentDidMount() {
     setCrashlyticsCollection();
     logScreen();
@@ -101,7 +102,7 @@ export default class Analytics extends Component {
           <Separator />
           <View>
             <Text style={styles.title}>Local Notification Event Start Here</Text>
-            <Button title="Local Notification" onPress={() => handleButtonPress()} />
+            <Button title="Local Notification" onPress={() => this.props.navigation.navigate('LocalNotificationScreen')} />
           </View>
 
         </ScrollView>
@@ -109,3 +110,5 @@ export default class Analytics extends Component {
     );
   }
 }
+
+export default Analytics;
