@@ -12,7 +12,7 @@ const RootNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Analytics">
-        <Stack.Screen name="Analytics" component={Analytics} />
+        <Stack.Screen name="Firebase Demo" component={Analytics} />
         <Stack.Screen
           name="LocalNotificationScreen"
           component={LocalNotificationScreen}
