@@ -7,6 +7,7 @@ import {
 import styles from './style';
 import PushNotification from 'react-native-push-notification';
 
+
 const handleButtonPress = () => {
   LocalNotification();
 };
@@ -31,6 +32,7 @@ class LocalNotificationScreen extends Component {
             onPress={() => handleButtonPress()}
           />
         </View>
+      
       </View>
     );
   }
