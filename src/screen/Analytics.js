@@ -25,6 +25,7 @@ function Separator() {
   return <View style={styles.separator} />;
 }
 
+
 export class Analytics extends Component {
   componentDidMount() {
     setCrashlyticsCollection();

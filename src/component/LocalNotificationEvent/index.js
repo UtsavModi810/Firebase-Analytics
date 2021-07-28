@@ -21,7 +21,13 @@ export function setPushNotification(handleNotification) {
       console.log('NOTIFICATION:', notification);
     },
 
-    popInitialNotification: true,
+    permissions: {
+      alert: true,
+      badge: true,
+      sound: true,
+    },
+
+    popInitialNotification:true,
     requestPermissions: true,
   });
 }

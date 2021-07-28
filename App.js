@@ -11,9 +11,6 @@ import RootNavigator from './src/router';
 class App extends Component {
   componentDidMount() {
     analyticsCollection();
-    messaging().setBackgroundMessageHandler(remoteMessage => {
-      console.log('Message handled in the background!-----', remoteMessage);
-    });
   }
   render() {
     return (
