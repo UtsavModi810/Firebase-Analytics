@@ -17,6 +17,7 @@ const RootNavigator = () => {
           name="LocalNotificationScreen"
           component={LocalNotificationScreen}
         />
+      
       </Stack.Navigator>
     </NavigationContainer>
   );
