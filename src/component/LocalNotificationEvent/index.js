@@ -3,6 +3,20 @@ import PushNotification from 'react-native-push-notification';
 PushNotification.configure({
   onNotification: function (notification) {
     console.log('LOCAL NOTIFICATION ==>', notification);
+    if (notification.action === 'CANCEL') {
+      PushNotification.removeDeliveredNotifications(identifiers);
+      console.log('Cancel pressed', notification);
+    }
+    if(notification.action === 'REPLY'){
+      console.log('Reply pressed', notification);
+    }
+  },
+
+  onAction: function (notification) {
+    console.log('ACTION:', notification.action);
+    console.log('NOTIFICATION:', notification);
+
+ 
   },
 
   popInitialNotification: true,
@@ -23,7 +37,7 @@ export const LocalNotification = () => {
     playSound: true,
     priority: 'high',
     soundName: 'default',
-    actions: '["CANCEL"]',
+    actions: '["REPLY","CANCEL"]',
     color: 'grey',
     largeIcon: 'ic_launcher',
     ticker: 'My Notification Ticker',
@@ -33,6 +47,9 @@ export const LocalNotification = () => {
     largeIconUrl:
       'https://static.toiimg.com/thumb/72975551.cms?width=150&resizemode=4&imgsize=881753',
     smallIcon: 'ic_notification',
+    bigLargeIcon: 'ic_launcher',
+    bigLargeIconUrl:
+      'https://static.toiimg.com/thumb/72975551.cms?width=150&resizemode=4&imgsize=881753',
     importance: 'high',
     allowWhileIdle: false,
     ignoreInForeground: false,
@@ -40,5 +57,7 @@ export const LocalNotification = () => {
     onlyAlertOnce: false,
     messageId: 'google:message_id',
     invokeApp: true,
+    bigPictureUrl:
+      'https://static.toiimg.com/thumb/72975551.cms?width=150&resizemode=4&imgsize=881753',
   });
 };

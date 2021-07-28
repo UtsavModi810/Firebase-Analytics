@@ -21,7 +21,6 @@ import {newPushNotificationEvent} from '../component/NotificationEvent';
 import {LocalNotification} from '../component/LocalNotificationEvent';
 import LocalNotificationScreen from './LocalNotificationScreen';
 
-
 function Separator() {
   return <View style={styles.separator} />;
 }
@@ -66,8 +65,8 @@ export class Analytics extends Component {
           <Separator />
           <View>
             <Text style={styles.title}>
-              In some cases, resetting all analytics data is required to
-              call the resetAnalyticsData method.
+              In some cases, resetting all analytics data is required to call
+              the resetAnalyticsData method.
             </Text>
             <Button title="Reset Analyticss Data" onPress={() => onSignOut()} />
           </View>
@@ -101,10 +100,16 @@ export class Analytics extends Component {
 
           <Separator />
           <View>
-            <Text style={styles.title}>Local Notification Event Start Here</Text>
-            <Button title="Local Notification" onPress={() => this.props.navigation.navigate('LocalNotificationScreen')} />
+            <Text style={styles.title}>
+              Local Notification Event Start Here
+            </Text>
+            <Button
+              title="Local Notification"
+              onPress={() =>
+                this.props.navigation.navigate('LocalNotificationScreen')
+              }
+            />
           </View>
-
         </ScrollView>
       </SafeAreaView>
     );
