@@ -12,7 +12,7 @@ class LocalNotificationScreen extends Component {
     return (
       <View>
         <View>
-          <Text style={styles.title}>Local Notification Event Start Here</Text>
+          <Text style={styles.title1}>Local Notification Event Start Here</Text>
           <Button
             title="Local Notification"
             onPress={() => handleButtonPress()}

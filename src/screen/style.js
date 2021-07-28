@@ -10,6 +10,12 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       marginVertical: 8,
     },
+    title1:{
+      textAlign: 'center',
+      marginVertical: 15,
+      fontSize:20,
+      fontWeight:'bold',
+    },
     fixToText: {
       flexDirection: 'row',
       justifyContent: 'space-between',

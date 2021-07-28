@@ -25,10 +25,6 @@ function Separator() {
   return <View style={styles.separator} />;
 }
 
-// const handleButtonPress = () => {
-//   LocalNotification()
-// }
-
 export class Analytics extends Component {
   componentDidMount() {
     setCrashlyticsCollection();
@@ -41,21 +37,14 @@ export class Analytics extends Component {
       <SafeAreaView style={styles.container}>
         <ScrollView>
           <View>
-            <Text style={styles.title}>Analytics Event Start Here</Text>
+            <Text style={styles.title1}>Analytics Event Start Here</Text>
           </View>
           <Separator />
           <View>
-            <Text style={styles.title}>
-              To log a custom event, use the logEvent method:
-            </Text>
             <Button title="Add custom event" onPress={() => addCustomEvent()} />
           </View>
           <Separator />
           <View>
-            <Text style={styles.title}>
-              User data can be attached to analytical events via the setUserId,
-              setUserProperties and setUserProperty methods.
-            </Text>
             <Button
               title="Set User"
               color="#f194ff"
@@ -64,15 +53,11 @@ export class Analytics extends Component {
           </View>
           <Separator />
           <View>
-            <Text style={styles.title}>
-              In some cases, resetting all analytics data is required to call
-              the resetAnalyticsData method.
-            </Text>
             <Button title="Reset Analyticss Data" onPress={() => onSignOut()} />
           </View>
           <Separator />
           <View>
-            <Text style={styles.title}>Crashlytics Event Start Here</Text>
+            <Text style={styles.title1}>Crashlytics Event Start Here</Text>
           </View>
 
           <View>
@@ -88,7 +73,11 @@ export class Analytics extends Component {
               }
             />
             <Separator />
-            <Button title="Test Crash" onPress={() => crashlytics().crash()} />
+            <Button
+              title="Test Crash"
+              color="#f194ff"
+              onPress={() => crashlytics().crash()}
+            />
           </View>
           <Separator />
           <View>
@@ -100,10 +89,11 @@ export class Analytics extends Component {
 
           <Separator />
           <View>
-            <Text style={styles.title}>
+            <Text style={styles.title1}>
               Local Notification Event Start Here
             </Text>
             <Button
+              color="#f194ff"
               title="Local Notification"
               onPress={() =>
                 this.props.navigation.navigate('LocalNotificationScreen')

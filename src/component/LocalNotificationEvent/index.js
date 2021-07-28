@@ -4,11 +4,13 @@ PushNotification.configure({
   onNotification: function (notification) {
     console.log('LOCAL NOTIFICATION ==>', notification);
     if (notification.action === 'CANCEL') {
-      PushNotification.removeDeliveredNotifications(identifiers);
+      //PushNotification.removeDeliveredNotifications(identifiers);
       console.log('Cancel pressed', notification);
+      alert('Cancel Pressed')
     }
     if(notification.action === 'REPLY'){
       console.log('Reply pressed', notification);
+      alert('Reply Pressed')
     }
   },
 
