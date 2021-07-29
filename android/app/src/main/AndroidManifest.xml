@@ -46,5 +46,10 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+         <receiver android:name="io.invertase.firebase.notifications.RNFirebaseBackgroundNotificationActionReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="io.invertase.firebase.notifications.BackgroundAction"/>
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

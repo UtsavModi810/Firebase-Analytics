@@ -36,9 +36,6 @@ export const newPushNotificationEvent = () => {
       sound: true,
     },
     popInitialNotification: true,
-
-    userInteraction: false,
-
     requestPermissions: true,
   });
 };
