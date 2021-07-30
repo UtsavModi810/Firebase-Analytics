@@ -4,7 +4,7 @@ import analytics from '@react-native-firebase/analytics';
 import {Button, View, SafeAreaView, Text, ScrollView} from 'react-native';
 import crashlytics from '@react-native-firebase/crashlytics';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
-import PushNotification from 'react-native-push-notification';
+import PushNotification,{Importance} from 'react-native-push-notification';
 import styles from './style';
 import {
   addCustomEvent,
@@ -20,7 +20,7 @@ import {
 import {newPushNotificationEvent} from '../component/NotificationEvent';
 import {LocalNotification} from '../component/LocalNotificationEvent';
 import LocalNotificationScreen from './LocalNotificationScreen';
-
+import messaging from '@react-native-firebase/messaging';
 function Separator() {
   return <View style={styles.separator} />;
 }
@@ -30,7 +30,36 @@ export class Analytics extends Component {
   componentDidMount() {
     setCrashlyticsCollection();
     logScreen();
+    
+    PushNotification.createChannel(
+      {
+        channelId: "channel-id", // (required)
+        channelName: "My channel", // (required)
+        channelDescription: "A channel to categorise your notifications", // (optional) default: undefined.
+        playSound: false, // (optional) default: true
+        soundName: "default", // (optional) See `soundName` parameter of `localNotification` function
+        importance: Importance.HIGH, // (optional) default: Importance.HIGH. Int value of the Android notification importance
+        vibrate: true, // (optional) default: true. Creates the default vibration patten if true.
+      },
+      (created) => console.log(`createChannel returned '${created}'`) // (optional) callback returns whether the channel was created, false means it already existed.
+    );
+    // PushNotification.localNotification({
+    //   /* Android Only Properties */
+    //   channelId: "channel-id", // (required) channelId, if the channel doesn't exist, notification will not trigger.
+    //   message: "My Notification Message11",
+
+    // });
     newPushNotificationEvent();
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+
+      PushNotification.localNotification({
+        /* Android Only Properties */
+        channelId: "channel-id", // (required) channelId, if the channel doesn't exist, notification will not trigger.
+        message: "My Notification Message",
+
+      });
+      console.log('Message handled in the background!', remoteMessage);
+    });
   }
 
   render() {
@@ -98,6 +127,21 @@ export class Analytics extends Component {
               title="Local Notification"
               onPress={() =>
                 this.props.navigation.navigate('LocalNotificationScreen')
+              }
+            />
+          </View>
+          <Separator />
+          <View>
+          <Button
+              color="#f194ff"
+              title="firebase Channel"
+              onPress={() =>
+                PushNotification.localNotification({
+                  /* Android Only Properties */
+                  channelId: "channel-id", // (required) channelId, if the channel doesn't exist, notification will not trigger.
+                  message: "My Notification Message13",
+            
+                })
               }
             />
           </View>
