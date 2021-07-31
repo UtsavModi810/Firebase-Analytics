@@ -19,8 +19,8 @@ import {
 } from '../component/CrashlyticsEvent';
 import {newPushNotificationEvent} from '../component/NotificationEvent';
 import {LocalNotification} from '../component/LocalNotificationEvent';
-import LocalNotificationScreen from './LocalNotificationScreen';
-import messaging from '@react-native-firebase/messaging';
+
+
 function Separator() {
   return <View style={styles.separator} />;
 }
@@ -30,36 +30,7 @@ export class Analytics extends Component {
   componentDidMount() {
     setCrashlyticsCollection();
     logScreen();
-    
-    PushNotification.createChannel(
-      {
-        channelId: "channel-id", // (required)
-        channelName: "My channel", // (required)
-        channelDescription: "A channel to categorise your notifications", // (optional) default: undefined.
-        playSound: false, // (optional) default: true
-        soundName: "default", // (optional) See `soundName` parameter of `localNotification` function
-        importance: Importance.HIGH, // (optional) default: Importance.HIGH. Int value of the Android notification importance
-        vibrate: true, // (optional) default: true. Creates the default vibration patten if true.
-      },
-      (created) => console.log(`createChannel returned '${created}'`) // (optional) callback returns whether the channel was created, false means it already existed.
-    );
-    // PushNotification.localNotification({
-    //   /* Android Only Properties */
-    //   channelId: "channel-id", // (required) channelId, if the channel doesn't exist, notification will not trigger.
-    //   message: "My Notification Message11",
-
-    // });
     newPushNotificationEvent();
-    messaging().setBackgroundMessageHandler(async remoteMessage => {
-
-      PushNotification.localNotification({
-        /* Android Only Properties */
-        channelId: "channel-id", // (required) channelId, if the channel doesn't exist, notification will not trigger.
-        message: "My Notification Message",
-
-      });
-      console.log('Message handled in the background!', remoteMessage);
-    });
   }
 
   render() {
@@ -124,9 +95,9 @@ export class Analytics extends Component {
             </Text>
             <Button
               color="#f194ff"
-              title="Local Notification"
+              title="Press to navigate Local Notification"
               onPress={() =>
-                this.props.navigation.navigate('LocalNotificationScreen')
+            this.props.navigation.navigate('LocalNotificationScreen')
               }
             />
           </View>
