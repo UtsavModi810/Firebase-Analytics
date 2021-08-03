@@ -21,7 +21,7 @@ export class NotifeeScreen extends Component {
         />
 
         <Separator />
-        
+
         <Button title="Cancel Notification" onPress={() => cancel} />
       </View>
     );

@@ -4,7 +4,7 @@ import analytics from '@react-native-firebase/analytics';
 import {Button, View, SafeAreaView, Text, ScrollView} from 'react-native';
 import crashlytics from '@react-native-firebase/crashlytics';
 import PushNotificationIOS from '@react-native-community/push-notification-ios';
-import PushNotification,{Importance} from 'react-native-push-notification';
+import PushNotification, {Importance} from 'react-native-push-notification';
 import styles from './style';
 import {
   addCustomEvent,
@@ -20,11 +20,9 @@ import {
 import {newPushNotificationEvent} from '../component/NotificationEvent';
 import {LocalNotification} from '../component/LocalNotificationEvent';
 
-
 function Separator() {
   return <View style={styles.separator} />;
 }
-
 
 export class Analytics extends Component {
   componentDidMount() {
@@ -97,21 +95,20 @@ export class Analytics extends Component {
               color="#f194ff"
               title="Press to navigate Local Notification"
               onPress={() =>
-            this.props.navigation.navigate('LocalNotificationScreen')
+                this.props.navigation.navigate('LocalNotificationScreen')
               }
             />
           </View>
           <Separator />
           <View>
-          <Button
+            <Button
               color="#f194ff"
               title="firebase Channel"
               onPress={() =>
                 PushNotification.localNotification({
                   /* Android Only Properties */
-                  channelId: "channel-id", // (required) channelId, if the channel doesn't exist, notification will not trigger.
-                  message: "My Notification Message13",
-            
+                  channelId: 'channel-id', // (required) channelId, if the channel doesn't exist, notification will not trigger.
+                  message: 'My Notification Message13',
                 })
               }
             />

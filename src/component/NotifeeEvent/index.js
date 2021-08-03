@@ -1,32 +1,56 @@
-import notifee from '@notifee/react-native';
+import notifee, {EventType, AndroidStyle} from '@notifee/react-native';
 
 export async function onDisplayNotification() {
-    // Create a channel
-    const channelId = await notifee.createChannel({
-      id: 'default',
-      name: 'Default Channel',
-    });
-  
-    // Display a notification
-    await notifee.displayNotification({
-      title: 'Notification Title',
-      body: 'Main body content of the notification',
-      android: {
-        channelId,
-        smallIcon: 'ic_launcher', // optional, defaults to 'ic_launcher'.
+  const channelId = await notifee.createChannel({
+    id: 'default',
+    name: 'Default Channel',
+  });
+
+  await notifee.displayNotification({
+    title: 'Image uploaded',
+    body: 'Your image has been successfully uploaded',
+    android: {
+      channelId,
+      style: {
+        type: AndroidStyle.BIGPICTURE,
+        picture:
+          'https://static.toiimg.com/thumb/72975551.cms?width=150&resizemode=4&imgsize=881753',
       },
-    });
-    await notifee.displayNotification({
-      id: '123',
-      title: 'Updated Notification Title',
-      body: 'Updated main body content of the notification',
-      android: {
-        channelId,
+    },
+  });
+  await notifee.displayNotification({
+    title: 'Image uploaded',
+    body: 'Your image has been successfully uploaded',
+    android: {
+      channelId,
+      style: {
+        type: AndroidStyle.BIGPICTURE,
+        picture:
+          'https://static.toiimg.com/thumb/72975551.cms?width=150&resizemode=4&imgsize=881753',
       },
-    });
-  }
-  
+    },
+  });
+  await notifee.onForegroundEvent(({type, detail}) => {
+    switch (type) {
+      case EventType.DISMISSED:
+        alert('User dismissed notification', detail.notification);
+        break;
+      case EventType.PRESS:
+        alert('User pressed notification', detail.notification);
+        break;
+    }
+  });
+  await notifee.onBackgroundEvent(async ({type, detail}) => {
+    const {notification, pressAction} = detail;
+
+    if (type === EventType.ACTION_PRESS && pressAction.id === 'mark-as-read') {
+      alert('Background Notification');
+
+      await notifee.cancelNotification(notification.id);
+    }
+  });
+}
+
 export async function cancel(notificationId) {
-    await notifee.cancelNotification(notificationId);
-  }
-  
+  await notifee.cancelNotification(notificationId);
+}

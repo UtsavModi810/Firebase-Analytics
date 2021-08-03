@@ -7,7 +7,6 @@ import {
 import styles from './style';
 import PushNotification from 'react-native-push-notification';
 
-
 function Separator() {
   return <View style={styles.separator} />;
 }

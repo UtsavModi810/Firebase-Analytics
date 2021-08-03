@@ -27,7 +27,7 @@ export function setPushNotification(handleNotification) {
       sound: true,
     },
 
-    popInitialNotification:true,
+    popInitialNotification: true,
     requestPermissions: true,
   });
 }

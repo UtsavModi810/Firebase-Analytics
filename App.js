@@ -8,18 +8,12 @@ import PushNotification from 'react-native-push-notification';
 
 import RootNavigator from './src/router';
 
-
-
 class App extends Component {
-
   componentDidMount() {
- 
     analyticsCollection();
   }
   render() {
-    return (
-        <RootNavigator />
-    );
+    return <RootNavigator />;
   }
 }
 

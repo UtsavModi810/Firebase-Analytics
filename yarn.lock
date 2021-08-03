@@ -1117,7 +1117,7 @@
   "resolved" "https://registry.npmjs.org/@react-native-firebase/analytics/-/analytics-12.2.0.tgz"
   "version" "12.2.0"
 
-"@react-native-firebase/app@^12.2.0", "@react-native-firebase/app@12.2.0", "@react-native-firebase/app@12.3.0":
+"@react-native-firebase/app@^12.2.0", "@react-native-firebase/app@12.2.0", "@react-native-firebase/app@12.3.0", "@react-native-firebase/app@12.4.0":
   "integrity" "sha512-3VGR5N3WtCW6/Bn/P2AqT8lHlpbUpFHpNg7gld/cN/YlRazGMl+OyMwdFXh28yE8IrWpYvcwrcE/X+O/U7AIzQ=="
   "resolved" "https://registry.npmjs.org/@react-native-firebase/app/-/app-12.2.0.tgz"
   "version" "12.2.0"
@@ -1131,6 +1131,11 @@
   "version" "12.3.0"
   dependencies:
     "stacktrace-js" "^2.0.0"
+
+"@react-native-firebase/dynamic-links@^12.4.0":
+  "integrity" "sha512-PcQI9cYbMeR3ypDmbmluWgKuDujbBwaVhZ8C26fEmBYe3oMvH7XN8h82iFjHdR4Oiq+sL33gIOW+3o6uCqyH1g=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/dynamic-links/-/dynamic-links-12.4.0.tgz"
+  "version" "12.4.0"
 
 "@react-native-firebase/messaging@^12.3.0":
   "integrity" "sha512-ok5r7RWgRJx0MVH/Te2Ymq+wrswXsSTcQKUd8a5/q6eOBljoO2/KNYT3822IBPdlqzKoX65Et1mCg0x8bjlrwg=="
