@@ -32,14 +32,13 @@ export class Analytics extends Component {
     });
     setCrashlyticsCollection();
     logScreen();
-    //newPushNotificationEvent();
+    newPushNotificationEvent();
     this.PushNotification = newPushNotificationEvent(this._handleNotificationOpen);
 
-    // newPushNotificationEvent();
   }
-  
+
   _handleNotificationOpen = () => {
-    console.log('notifcation click')
+    console.log('Notification click')
     const { navigate } = this.props.navigation.navigate(
       'LocalNotificationScreen',
     );

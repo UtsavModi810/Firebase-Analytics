@@ -2,15 +2,15 @@ import PushNotificationIOS from '@react-native-community/push-notification-ios';
 import PushNotification from 'react-native-push-notification';
 import messaging from '@react-native-firebase/messaging';
 
-export function newPushNotificationEvent (handleNotification) {
+export function newPushNotificationEvent(handleNotification) {
   PushNotification.configure({
     onRegister: function (token) {
       console.log('TOKEN:', token);
     },
 
     onNotification: function (notification) {
-      console.log('notification',notification)
-     
+      console.log('notification', notification)
+
       if (notification.foreground) {
         PushNotification.localNotification({
           channelId: notification.channelId,
@@ -24,7 +24,7 @@ export function newPushNotificationEvent (handleNotification) {
     onAction: function (notification) {
       console.log('ACTION:', notification.action);
       console.log('NOTIFICATION:', notification);
-     
+
     },
 
     onRegistrationError: function (err) {
@@ -43,14 +43,14 @@ export function newPushNotificationEvent (handleNotification) {
   });
 };
 
-export function Subscribe () {
+export function Subscribe() {
   messaging()
-  .subscribeToTopic('weather')
-  .then(() => console.log('Subscribed to topic!'));
+    .subscribeToTopic('weather')
+    .then(() => console.log('Subscribed to topic!'));
 }
 
-export function Unsubscribe () {
+export function Unsubscribe() {
   messaging()
-  .unsubscribeFromTopic('weather')
-  .then(() => console.log('Unsubscribed fom the topic!'));
+    .unsubscribeFromTopic('weather')
+    .then(() => console.log('Unsubscribed fom the topic!'));
 }

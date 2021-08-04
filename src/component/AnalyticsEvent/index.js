@@ -1,7 +1,7 @@
 import analytics from '@react-native-firebase/analytics';
 import firebase from '@react-native-firebase/app';
 
-export const addCustomEvent = (id,value,variable) => {
+export const addCustomEvent = (id, value, variable) => {
   analytics().logEvent('custom_event', {
     id: id,
     value: value,
@@ -9,7 +9,7 @@ export const addCustomEvent = (id,value,variable) => {
   });
 };
 
-export const setUser = (setUserId,setUserProperty) => {
+export const setUser = (setUserId, setUserProperty) => {
   analytics().setUserId(setUserId),
     analytics().setUserProperty(setUserProperty);
 };

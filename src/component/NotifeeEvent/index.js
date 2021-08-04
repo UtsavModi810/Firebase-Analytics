@@ -60,7 +60,7 @@ export async function onDisplayNotification(navigation) {
   });
   await notifee.onBackgroundEvent(async ({ type, detail }) => {
     const { notification, pressAction } = detail;
-    console.log('---------',navigation)
+    console.log('---------', navigation)
     if (type === EventType.PRESS) {
 
       console.log('Background Notification', detail.notification)
