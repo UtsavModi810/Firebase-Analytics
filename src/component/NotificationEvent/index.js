@@ -10,7 +10,6 @@ export function newPushNotificationEvent(handleNotification) {
 
     onNotification: function (notification) {
       console.log('notification', notification)
-
       if (notification.foreground) {
         PushNotification.localNotification({
           channelId: notification.channelId,
@@ -24,7 +23,6 @@ export function newPushNotificationEvent(handleNotification) {
     onAction: function (notification) {
       console.log('ACTION:', notification.action);
       console.log('NOTIFICATION:', notification);
-
     },
 
     onRegistrationError: function (err) {
