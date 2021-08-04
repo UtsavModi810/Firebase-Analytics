@@ -1,6 +1,7 @@
 import notifee, { EventType, AndroidStyle } from '@notifee/react-native';
+import { NavigationHelpersContext } from '@react-navigation/native';
 
-export async function onDisplayNotification() {
+export async function onDisplayNotification(navigation) {
   const channelId = await notifee.createChannel({
     id: 'default',
     name: 'Default Channel',
@@ -12,6 +13,10 @@ export async function onDisplayNotification() {
     body: 'Your image has been successfully uploaded',
     android: {
       channelId,
+      pressAction: {
+        id: 'default',
+        launchActivity: 'default' // works fine
+      },
       actions: [
         {
           title: '<b>Yes</b>',
@@ -49,25 +54,18 @@ export async function onDisplayNotification() {
         break;
       case EventType.PRESS:
         alert('User pressed notification', detail.notification);
+        navigation.navigate('Analytics')
         break;
     }
   });
   await notifee.onBackgroundEvent(async ({ type, detail }) => {
     const { notification, pressAction } = detail;
+    console.log('---------',navigation)
+    if (type === EventType.PRESS) {
 
-    const initialNotification = await notifee.getInitialNotification();
-
-  if (initialNotification) {
-    console.log('Notification caused application to open', initialNotification.notification);
-    console.log('Press action used to open the app', initialNotification.pressAction);
-  }
-
-    if (type === EventType.ACTION_PRESS && pressAction.id) {
-      alert('Background Notification',detail.notification);
       console.log('Background Notification', detail.notification)
-
-
-      //await notifee.cancelNotification(notification.id);
+      navigation.navigate('Analytics')
+      await notifee.cancelNotification(notification.id);
     }
   });
 
@@ -77,11 +75,3 @@ export async function cancel(notificationId) {
   await notifee.cancelNotification(notificationId);
 }
 
-export async function bootstrap() {
-  const initialNotification = await notifee.getInitialNotification();
-
-  if (initialNotification) {
-    console.log('Notification caused application to open', initialNotification.notification);
-    console.log('Press action used to open the app', initialNotification.pressAction);
-  }
-}
