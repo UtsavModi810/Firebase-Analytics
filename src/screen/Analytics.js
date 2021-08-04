@@ -31,7 +31,7 @@ export class Analytics extends Component {
       console.log('Message handled in the background!', remoteMessage);
     });
     setCrashlyticsCollection(true);
-    logScreen('analytics screen','Analytics');
+    logScreen('analytics screen', 'Analytics');
     newPushNotificationEvent();
     this.PushNotification = newPushNotificationEvent(this._handleNotificationOpen);
 
@@ -50,7 +50,7 @@ export class Analytics extends Component {
       <SafeAreaView style={styles.container}>
         <ScrollView>
           <View>
-            <Text style={styles.title1}>Analytics Event Start Here</Text>
+            <Text style={styles.title1}>Analytics Event</Text>
           </View>
           <Separator />
           <View>
@@ -73,7 +73,7 @@ export class Analytics extends Component {
           </View>
           <Separator />
           <View>
-            <Text style={styles.title1}>Crashlytics Event Start Here</Text>
+            <Text style={styles.title1}>Crashlytics Event</Text>
           </View>
 
           <View>
@@ -106,7 +106,7 @@ export class Analytics extends Component {
           <Separator />
           <View>
             <Text style={styles.title1}>
-              Local Notification Event Start Here
+              Local Notification Event
             </Text>
             <Button
               color="#f194ff"
@@ -131,7 +131,7 @@ export class Analytics extends Component {
             />
             <Separator />
             <Text style={styles.title1}>
-              Create the Subscribe and Unsubscribe notification
+              Subscribe and Unsubscribe notification Event
             </Text>
             <Separator />
             <Button
