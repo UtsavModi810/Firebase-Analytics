@@ -12,29 +12,13 @@ function Separator() {
   return <View style={styles.separator} />;
 }
 
-const handleButtonPress = () => {
-  LocalNotification();
-};
 
 class LocalNotificationScreen extends Component {
-  componentDidMount() {
-    this.PushNotification = setPushNotification(this._handleNotificationOpen);
-  }
-
-  _handleNotificationOpen = () => {
-    const { navigate } = this.props.navigation.navigate(
-      'LocalNotificationScreen',
-    );
-  };
   render() {
     return (
       <View>
         <View>
-          <Text style={styles.title1}>Local Notification Event Start Here</Text>
-          <Button
-            title="Local Notification"
-            onPress={() => handleButtonPress()}
-          />
+          <Text style={styles.title1}>Push Notification Event Start Here</Text>
           <Separator />
 
           <Button
