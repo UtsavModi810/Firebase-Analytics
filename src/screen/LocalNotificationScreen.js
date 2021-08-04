@@ -1,11 +1,12 @@
-import React, {Component} from 'react';
-import {Text, View, Button} from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, Button } from 'react-native';
 import {
   LocalNotification,
   setPushNotification,
 } from '../component/LocalNotificationEvent';
 import styles from './style';
 import PushNotification from 'react-native-push-notification';
+
 
 function Separator() {
   return <View style={styles.separator} />;
@@ -21,7 +22,7 @@ class LocalNotificationScreen extends Component {
   }
 
   _handleNotificationOpen = () => {
-    const {navigate} = this.props.navigation.navigate(
+    const { navigate } = this.props.navigation.navigate(
       'LocalNotificationScreen',
     );
   };

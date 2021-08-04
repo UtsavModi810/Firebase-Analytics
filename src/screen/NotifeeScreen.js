@@ -1,13 +1,16 @@
-import React, {Component} from 'react';
-import {Text, View, Button} from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, Button } from 'react-native';
 import styles from './style';
-import {cancel, onDisplayNotification} from '../component/NotifeeEvent';
+import { bootstrap, cancel, onDisplayNotification } from '../component/NotifeeEvent';
 
 function Separator() {
   return <View style={styles.separator} />;
 }
 
 export class NotifeeScreen extends Component {
+  componentDidUpdate(){
+    bootstrap()
+  }
   render() {
     return (
       <View>

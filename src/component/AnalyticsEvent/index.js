@@ -1,20 +1,20 @@
 import analytics from '@react-native-firebase/analytics';
 import firebase from '@react-native-firebase/app';
 
-export const addCustomEvent = () => {
+export const addCustomEvent = (id,value,variable) => {
   analytics().logEvent('custom_event', {
-    id: '123123',
-    value: 'buy',
-    variable: '123',
+    id: id,
+    value: value,
+    variable: variable,
   });
 };
 
-export const onSignIn = () => {
-  analytics().setUserId('2345'),
-    analytics().setUserProperty('account_balance', '1234567890');
+export const setUser = (setUserId,setUserProperty) => {
+  analytics().setUserId(setUserId),
+    analytics().setUserProperty(setUserProperty);
 };
 
-export const onSignOut = () => {
+export const resetData = () => {
   analytics().resetAnalyticsData();
 };
 

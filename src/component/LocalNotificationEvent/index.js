@@ -3,22 +3,22 @@ import PushNotification from 'react-native-push-notification';
 export function setPushNotification(handleNotification) {
   PushNotification.configure({
     onNotification: function (notification) {
-      console.log('LOCAL NOTIFICATION ==>', notification);
+     // console.log('LOCAL NOTIFICATION ==>', notification);
       if (notification.action === 'CANCEL') {
         //PushNotification.removeDeliveredNotifications(identifiers);
-        console.log('Cancel pressed', notification);
+      //  console.log('Cancel pressed', notification);
         alert('Cancel Pressed');
       }
       if (notification.action === 'REPLY') {
-        console.log('Reply pressed', notification);
+      //  console.log('Reply pressed', notification);
         alert('Reply Pressed');
       }
       handleNotification(notification);
     },
 
     onAction: function (notification) {
-      console.log('ACTION:', notification.action);
-      console.log('NOTIFICATION:', notification);
+      // console.log('ACTION:', notification.action);
+      // console.log('NOTIFICATION:', notification);
     },
 
     permissions: {
