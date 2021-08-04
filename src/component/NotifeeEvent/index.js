@@ -1,37 +1,30 @@
 import notifee, { EventType, AndroidStyle } from '@notifee/react-native';
 import { NavigationHelpersContext } from '@react-navigation/native';
 
-export async function onDisplayNotification(navigation) {
+
+export async function onDisplayNotification(navigation,notificationData) {
   const channelId = await notifee.createChannel({
-    id: 'default',
-    name: 'Default Channel',
+    id: notificationData.id,
+    name: notificationData.name,
+   
   });
+ 
 
   await notifee.displayNotification({
 
-    title: 'Image uploaded',
-    body: 'Your image has been successfully uploaded',
+    title: notificationData.title,
+    body: notificationData.body,
     android: {
       channelId,
       pressAction: {
-        id: 'default',
-        launchActivity: 'default' // works fine
+        id: notificationData.pressAction.id,
+        launchActivity: notificationData.pressAction.launchActivity, // works fine
       },
-      actions: [
-        {
-          title: '<b>Yes</b>',
-          pressAction: { id: 'Yes' },
-        },
-        {
-          title: '<p style="color: #f44336;"><b>No</b></p>',
-          pressAction: { id: 'No' },
-        },
-
-      ],
+      actions:notificationData.actions, 
       style: {
         type: AndroidStyle.BIGPICTURE,
         picture:
-          'https://static.toiimg.com/thumb/72975551.cms?width=150&resizemode=4&imgsize=881753',
+         notificationData.picture,
       },
     },
   });

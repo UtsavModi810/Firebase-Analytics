@@ -10,7 +10,7 @@ import RootNavigator from './src/router';
 
 class App extends Component {
   componentDidMount() {
-    analyticsCollection();
+    analyticsCollection(true);
   }
   render() {
     return <RootNavigator />;

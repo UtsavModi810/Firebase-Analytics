@@ -18,13 +18,13 @@ export const resetData = () => {
   analytics().resetAnalyticsData();
 };
 
-export const analyticsCollection = () => {
-  analytics().setAnalyticsCollectionEnabled(true);
+export const analyticsCollection = (test) => {
+  analytics().setAnalyticsCollectionEnabled(test);
 };
 
-export const logScreen = () => {
+export const logScreen = (screen_name,screen_class) => {
   analytics().logScreenView({
-    screen_name: 'Utsav analytics screen',
-    screen_class: 'Analytics',
+    screen_name: screen_name,
+    screen_class: screen_class,
   });
 };

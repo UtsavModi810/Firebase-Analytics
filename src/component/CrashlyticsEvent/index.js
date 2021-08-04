@@ -1,12 +1,12 @@
 import firebase from '@react-native-firebase/app';
 import crashlytics from '@react-native-firebase/crashlytics';
 
-export const setCrashlyticsCollection = () => {
-  crashlytics().setCrashlyticsCollectionEnabled(true);
+export const setCrashlyticsCollection = (test) => {
+  crashlytics().setCrashlyticsCollectionEnabled(test);
 };
 
-export const setCrashlyticsLog = () => {
-  crashlytics().log('User Log');
+export const setCrashlyticsLog = (log) => {
+  crashlytics().log(log);
 };
 
 export const crashUser = async user => {

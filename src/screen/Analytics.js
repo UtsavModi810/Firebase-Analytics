@@ -30,8 +30,8 @@ export class Analytics extends Component {
     messaging().setBackgroundMessageHandler(async remoteMessage => {
       console.log('Message handled in the background!', remoteMessage);
     });
-    setCrashlyticsCollection();
-    logScreen();
+    setCrashlyticsCollection(true);
+    logScreen('analytics screen','Analytics');
     newPushNotificationEvent();
     this.PushNotification = newPushNotificationEvent(this._handleNotificationOpen);
 
@@ -99,7 +99,7 @@ export class Analytics extends Component {
           <View>
             <Button
               title="Crashlytics Log"
-              onPress={() => setCrashlyticsLog()}
+              onPress={() => setCrashlyticsLog('user log')}
             />
           </View>
 
