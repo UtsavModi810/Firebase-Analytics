@@ -5,11 +5,10 @@ import messaging from '@react-native-firebase/messaging';
 export function newPushNotificationEvent(handleNotification) {
   PushNotification.configure({
     onRegister: function (token) {
-      console.log('TOKEN:', token);
+        //Here we get token
     },
 
     onNotification: function (notification) {
-      console.log('notification', notification)
       if (notification.foreground) {
         PushNotification.localNotification({
           channelId: notification.channelId,
@@ -21,12 +20,11 @@ export function newPushNotificationEvent(handleNotification) {
     },
 
     onAction: function (notification) {
-      console.log('ACTION:', notification.action);
-      console.log('NOTIFICATION:', notification);
+    //Here we get notification object
     },
 
     onRegistrationError: function (err) {
-      console.error(err.message, err);
+      //Here we get error message
     },
 
     senderID: '27580035138',
@@ -43,12 +41,12 @@ export function newPushNotificationEvent(handleNotification) {
 
 export function Subscribe() {
   messaging()
-    .subscribeToTopic('weather')
+    .subscribeToTopic('testing_topic')
     .then(() => console.log('Subscribed to topic!'));
 }
 
 export function Unsubscribe() {
   messaging()
-    .unsubscribeFromTopic('weather')
+    .unsubscribeFromTopic('testing_topic')
     .then(() => console.log('Unsubscribed fom the topic!'));
 }

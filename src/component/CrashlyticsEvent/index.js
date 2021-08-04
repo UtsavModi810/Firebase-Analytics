@@ -1,8 +1,8 @@
 import firebase from '@react-native-firebase/app';
 import crashlytics from '@react-native-firebase/crashlytics';
 
-export const setCrashlyticsCollection = (test) => {
-  crashlytics().setCrashlyticsCollectionEnabled(test);
+export const setCrashlyticsCollection = (isCrashlyticsEnabled) => {
+  crashlytics().setCrashlyticsCollectionEnabled(isCrashlyticsEnabled);
 };
 
 export const setCrashlyticsLog = (log) => {

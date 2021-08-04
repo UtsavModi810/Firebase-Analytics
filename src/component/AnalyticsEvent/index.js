@@ -18,13 +18,13 @@ export const resetData = () => {
   analytics().resetAnalyticsData();
 };
 
-export const analyticsCollection = (test) => {
-  analytics().setAnalyticsCollectionEnabled(test);
+export const analyticsCollection = (isAnalyticsEnabled) => {
+  analytics().setAnalyticsCollectionEnabled(isAnalyticsEnabled);
 };
 
-export const logScreen = (screen_name,screen_class) => {
+export const logScreen = (screenName,screenName) => {
   analytics().logScreenView({
-    screen_name: screen_name,
-    screen_class: screen_class,
+    screen_name: screenName,
+    screen_class: screenName,
   });
 };
