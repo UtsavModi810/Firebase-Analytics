@@ -22,9 +22,9 @@ export const analyticsCollection = (isAnalyticsEnabled) => {
   analytics().setAnalyticsCollectionEnabled(isAnalyticsEnabled);
 };
 
-export const logScreen = (screenName,screenName) => {
+export const logScreen = (screenName,screenClass) => {
   analytics().logScreenView({
     screen_name: screenName,
-    screen_class: screenName,
+    screen_class: screenClass,
   });
 };
